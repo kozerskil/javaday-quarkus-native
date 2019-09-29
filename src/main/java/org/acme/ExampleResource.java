@@ -1,5 +1,7 @@
 package org.acme;
 
+import java.util.UUID;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -9,8 +11,11 @@ import javax.ws.rs.core.MediaType;
 public class ExampleResource {
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return "hello";
+    @Produces(MediaType.APPLICATION_JSON)
+    public Greeting hello() {
+        return Greeting.builder()
+            .id(UUID.randomUUID().toString())
+            .content("Greetings from Spring Boot!")
+            .build();
     }
 }
