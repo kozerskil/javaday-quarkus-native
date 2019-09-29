@@ -3,5 +3,9 @@
 https://code.quarkus.io/
 
 ```
-./mvnw compile quarkus:dev
+mvn compile quarkus:dev
+```
+
+```
+mvn quarkus:add-extension -Dextensions="openapi"
 ```
