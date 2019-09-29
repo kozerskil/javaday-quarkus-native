@@ -15,7 +15,7 @@ public class ExampleResource {
     public Greeting hello() {
         return Greeting.builder()
             .id(UUID.randomUUID().toString())
-            .content("Greetings from Spring Boot!")
+            .content("Greetings from Quarkus!")
             .build();
     }
 }
