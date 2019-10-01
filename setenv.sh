@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-JAVA_HOME=/usr/lib/jvm/graalvm-ce-19.2.0.1
-export JAVA_HOME
+export JAVA_HOME=/usr/lib/jvm/graalvm-ce-19.2.0.1
 
-PATH="$JAVA_HOME/bin:$HOME/.local/bin:$HOME/bin:$PATH"
-export PATH
+export GRAALVM_HOME=$JAVA_HOME
 
+export PATH="$JAVA_HOME/bin:$HOME/.local/bin:$HOME/bin:$PATH"
+
+echo $JAVA_HOME
