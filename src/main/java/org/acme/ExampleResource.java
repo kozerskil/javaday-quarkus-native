@@ -1,5 +1,6 @@
 package org.acme;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import javax.ws.rs.GET;
@@ -13,9 +14,10 @@ public class ExampleResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Greeting hello() {
-        return Greeting.builder()
-            .id(UUID.randomUUID().toString())
-            .content("Greetings from Quarkus Native!")
-            .build();
+        return new Greeting(
+            UUID.randomUUID().toString(),
+            "Greetings from Quarkus Native!",
+            LocalDateTime.now()
+        );
     }
 }
